@@ -43,7 +43,7 @@ def addcustomer():
     addroot.geometry('470x470+220+200')
     addroot.title('Customer Management System')
     addroot.config(bg='#FCF3CF')
-    addroot.iconbitmap('CustomerPython\mana.ico')
+    addroot.iconbitmap('mana.ico')
     addroot.resizable(False, False)
     # --------------------------------------------------- Add Customer Labels
     idlabel = Label(addroot, text='Enter Id : ', bg='#F5EEF8', font=(
@@ -76,7 +76,7 @@ def addcustomer():
     mobileentry.place(x=250, y=130)
 
     # ------------------------- add button
-    submitbtn = Button(addroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB', 
+    submitbtn = Button(addroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB',
                        bg='#F5EEF8', command=submitadd)
     submitbtn.place(x=150, y=420)
 
@@ -104,7 +104,7 @@ def searchcustomer():
             datas = mycursor.fetchall()
             customertable.delete(*customertable.get_children())
             for i in datas:
-                vv = [i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]]
+                vv = [i[0], i[1], i[2], i[3], i[4]]
                 customertable.insert('', END, values=vv)
         elif (mobile != ''):
             strr = 'select *from customerdata1 where mobile=%s'
@@ -112,11 +112,11 @@ def searchcustomer():
             datas = mycursor.fetchall()
             customertable.delete(*customertable.get_children())
             for i in datas:
-                vv = [i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]]
+                vv = [i[0], i[1], i[2], i[3], i[4]]
                 customertable.insert('', END, values=vv)
 
             for i in datas:
-                vv = [i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]]
+                vv = [i[0], i[1], i[2], i[3], i[4]]
                 customertable.insert('', END, values=vv)
 
         elif (addeddate != ''):
@@ -125,7 +125,7 @@ def searchcustomer():
             datas = mycursor.fetchall()
             customertable.delete(*customertable.get_children())
             for i in datas:
-                vv = [i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8]]
+                vv = [i[0], i[1], i[2], i[3], i[4]]
                 customertable.insert('', END, values=vv)
 
     searchroot = Toplevel(master=DataEntryFrame)
@@ -133,7 +133,7 @@ def searchcustomer():
     searchroot.geometry('470x540+220+200')
     searchroot.title('Customer Management System')
     searchroot.config(bg='#FCF3CF')
-    searchroot.iconbitmap('CustomerPython\mana.ico')
+    searchroot.iconbitmap('mana.ico')
     searchroot.resizable(False, False)
     # --------------------------------------------------- Add studenmt Labels
     idlabel = Label(searchroot, text='Enter Id : ', bg='#F5EEF8', font=(
@@ -206,9 +206,9 @@ def updatecustomer():
         mobile = mobileval.get()
 
         time = timeval.get()
-
+        date = dateval.get()
         strr = 'update customerdata1 set name=%s,mobile=%s,date=%s,time=%s where id=%s'
-        mycursor.execute(strr, (name, mobile,  time, id))
+        mycursor.execute(strr, (name, mobile, date,  time, id))
         con.commit()
         messagebox.showinfo(
             'Notifications', 'Id {} Modified sucessfully...'.format(id), parent=updateroot)
@@ -225,7 +225,7 @@ def updatecustomer():
     updateroot.geometry('470x585+220+160')
     updateroot.title('Customer Management System')
     updateroot.config(bg='#FCF3CF')
-    updateroot.iconbitmap('CustomerPython\mana.ico')
+    updateroot.iconbitmap('mana.ico')
     updateroot.resizable(False, False)
     # --------------------------------------------------- Add Customer Labels
     idlabel = Label(updateroot, text='Enter Id : ', bg='#F5EEF8', font=(
@@ -273,7 +273,7 @@ def updatecustomer():
     dateentry.place(x=250, y=190)
 
     timeentry = Entry(updateroot, font=('times', 15, 'bold'),
-                      bd=5, textvariable=dateval)
+                      bd=5, textvariable=timeval)
     timeentry.place(x=250, y=250)
     # ------------------------- add button
     submitbtn = Button(updateroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB',
@@ -286,9 +286,8 @@ def updatecustomer():
         idval.set(pp[0])
         nameval.set(pp[1])
         mobileval.set(pp[2])
-
-        dateval.set(pp[7])
-        timeval.set(pp[8])
+        dateval.set(pp[3])
+        timeval.set(pp[4])
 
     updateroot.mainloop()
 
@@ -326,9 +325,6 @@ def exitcustomer():
     res = messagebox.askyesnocancel('Notification', 'Do you want to exit?')
     if (res == True):
         root.destroy()
-
-
-
 
 
 # Connecttion of Database---------------------------------------------------------------------------------------------------------------------------------
@@ -369,7 +365,7 @@ def Connectdb():
     dbroot = Toplevel()
     dbroot.grab_set()
     dbroot.geometry('470x250+800+230')
-    dbroot.iconbitmap('CustomerPython\mana.ico')
+    dbroot.iconbitmap('mana.ico')
     dbroot.resizable(False, False)
     dbroot.config(bg='#FCF3CF')
     # -------------------------------Connectdb Labels
@@ -404,11 +400,11 @@ def Connectdb():
 
     # -------------------------------- Connectdb button
     submitbutton = Button(dbroot, text='Submit', font=('times', 15, 'bold'), bg='#F5EEF8', bd=5, width=20, activebackground='#D1F2EB',
-                           command=submitdb)
+                          command=submitdb)
     submitbutton.place(x=150, y=190)
 
     dbroot.mainloop()
-############################################---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 
 
 def tick():
@@ -417,12 +413,13 @@ def tick():
     clock.config(text='Date :'+date_string+"\n"+"Time : "+time_string)
     clock.after(200, tick)
 
+
 ##########################################################################################################
 root = Tk()
 root.title('Customer Management System')
 root.config(bg='#FCF3CF')
 root.geometry('1430x700+200+50')
-root.iconbitmap('CustomerPython\mana.ico')
+root.iconbitmap('mana.ico')
 root.resizable(False, False)
 # Frames
 # ---------------------------------------------------------------------------- dataentry frame
@@ -431,7 +428,7 @@ DataEntryFrame = Frame(root, bg='white', relief=GROOVE, borderwidth=5)
 DataEntryFrame.place(x=10, y=80, width=500, height=600)
 
 addbtn = Button(DataEntryFrame, text='Add Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
-                   command=addcustomer)
+                command=addcustomer)
 addbtn.pack(side=TOP, expand=True)
 
 searchbtn = Button(DataEntryFrame, text='Search Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
