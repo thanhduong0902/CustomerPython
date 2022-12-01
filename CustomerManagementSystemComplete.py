@@ -42,19 +42,19 @@ def addcustomer():
     addroot.grab_set()
     addroot.geometry('470x470+220+200')
     addroot.title('Customer Management System')
-    addroot.config(bg='blue')
-    addroot.iconbitmap('mana.ico')
+    addroot.config(bg='#FCF3CF')
+    addroot.iconbitmap('CustomerPython\mana.ico')
     addroot.resizable(False, False)
     # --------------------------------------------------- Add Customer Labels
-    idlabel = Label(addroot, text='Enter Id : ', bg='gold2', font=(
+    idlabel = Label(addroot, text='Enter Id : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     idlabel.place(x=10, y=10)
 
-    namelabel = Label(addroot, text='Enter Name : ', bg='gold2', font=(
+    namelabel = Label(addroot, text='Enter Name : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     namelabel.place(x=10, y=70)
 
-    mobilelabel = Label(addroot, text='Enter Mobile : ', bg='gold2', font=(
+    mobilelabel = Label(addroot, text='Enter Mobile : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     mobilelabel.place(x=10, y=130)
 
@@ -63,21 +63,21 @@ def addcustomer():
     nameval = StringVar()
     mobileval = StringVar()
 
-    identry = Entry(addroot, font=('roman', 15, 'bold'),
+    identry = Entry(addroot, font=('times', 15, 'bold'),
                     bd=5, textvariable=idval)
     identry.place(x=250, y=10)
 
-    nameentry = Entry(addroot, font=('roman', 15, 'bold'),
+    nameentry = Entry(addroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=nameval)
     nameentry.place(x=250, y=70)
 
-    mobileentry = Entry(addroot, font=('roman', 15, 'bold'),
+    mobileentry = Entry(addroot, font=('times', 15, 'bold'),
                         bd=5, textvariable=mobileval)
     mobileentry.place(x=250, y=130)
 
     # ------------------------- add button
-    submitbtn = Button(addroot, text='Submit', font=('roman', 15, 'bold'), width=20, bd=5, activebackground='blue', activeforeground='white',
-                       bg='red', command=submitadd)
+    submitbtn = Button(addroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB', 
+                       bg='#F5EEF8', command=submitadd)
     submitbtn.place(x=150, y=420)
 
     addroot.mainloop()
@@ -132,25 +132,25 @@ def searchcustomer():
     searchroot.grab_set()
     searchroot.geometry('470x540+220+200')
     searchroot.title('Customer Management System')
-    searchroot.config(bg='firebrick1')
-    searchroot.iconbitmap('mana.ico')
+    searchroot.config(bg='#FCF3CF')
+    searchroot.iconbitmap('CustomerPython\mana.ico')
     searchroot.resizable(False, False)
     # --------------------------------------------------- Add studenmt Labels
-    idlabel = Label(searchroot, text='Enter Id : ', bg='gold2', font=(
+    idlabel = Label(searchroot, text='Enter Id : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     idlabel.place(x=10, y=10)
 
-    namelabel = Label(searchroot, text='Enter Name : ', bg='gold2', font=(
+    namelabel = Label(searchroot, text='Enter Name : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     namelabel.place(x=10, y=70)
 
-    mobilelabel = Label(searchroot, text='Enter Mobile : ', bg='gold2', font=(
+    mobilelabel = Label(searchroot, text='Enter Mobile : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     mobilelabel.place(x=10, y=130)
 
-    datelabel = Label(searchroot, text='Enter Date : ', bg='gold2', font=(
+    datelabel = Label(searchroot, text='Enter Date : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
-    datelabel.place(x=10, y=430)
+    datelabel.place(x=10, y=190)
 
     # ----------------------------------------------------------- Add Customer Entry
     idval = StringVar()
@@ -158,24 +158,24 @@ def searchcustomer():
     mobileval = StringVar()
     dateval = StringVar()
 
-    identry = Entry(searchroot, font=('roman', 15, 'bold'),
+    identry = Entry(searchroot, font=('times', 15, 'bold'),
                     bd=5, textvariable=idval)
     identry.place(x=250, y=10)
 
-    nameentry = Entry(searchroot, font=('roman', 15, 'bold'),
+    nameentry = Entry(searchroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=nameval)
     nameentry.place(x=250, y=70)
 
     mobileentry = Entry(searchroot, font=(
-        'roman', 15, 'bold'), bd=5, textvariable=mobileval)
+        'times', 15, 'bold'), bd=5, textvariable=mobileval)
     mobileentry.place(x=250, y=130)
 
-    dateentry = Entry(searchroot, font=('roman', 15, 'bold'),
+    dateentry = Entry(searchroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=dateval)
-    dateentry.place(x=250, y=430)
+    dateentry.place(x=250, y=190)
     # ------------------------- add button
-    submitbtn = Button(searchroot, text='Submit', font=('roman', 15, 'bold'), width=20, bd=5, activebackground='blue', activeforeground='white',
-                       bg='red', command=search)
+    submitbtn = Button(searchroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB',
+                       bg='#F5EEF8', command=search)
     submitbtn.place(x=150, y=480)
 
     searchroot.mainloop()
@@ -224,29 +224,29 @@ def updatecustomer():
     updateroot.grab_set()
     updateroot.geometry('470x585+220+160')
     updateroot.title('Customer Management System')
-    updateroot.config(bg='firebrick1')
-    updateroot.iconbitmap('mana.ico')
+    updateroot.config(bg='#FCF3CF')
+    updateroot.iconbitmap('CustomerPython\mana.ico')
     updateroot.resizable(False, False)
     # --------------------------------------------------- Add Customer Labels
-    idlabel = Label(updateroot, text='Enter Id : ', bg='gold2', font=(
+    idlabel = Label(updateroot, text='Enter Id : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     idlabel.place(x=10, y=10)
 
-    namelabel = Label(updateroot, text='Enter Name : ', bg='gold2', font=(
+    namelabel = Label(updateroot, text='Enter Name : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     namelabel.place(x=10, y=70)
 
-    mobilelabel = Label(updateroot, text='Enter Mobile : ', bg='gold2', font=(
+    mobilelabel = Label(updateroot, text='Enter Mobile : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
     mobilelabel.place(x=10, y=130)
 
-    datelabel = Label(updateroot, text='Enter Date : ', bg='gold2', font=(
+    datelabel = Label(updateroot, text='Enter Date : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
-    datelabel.place(x=10, y=430)
+    datelabel.place(x=10, y=190)
 
-    timelabel = Label(updateroot, text='Enter Time : ', bg='gold2', font=(
+    timelabel = Label(updateroot, text='Enter Time : ', bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=12, anchor='w')
-    timelabel.place(x=10, y=490)
+    timelabel.place(x=10, y=250)
 
     # ----------------------------------------------------------- Add Customer Entry
     idval = StringVar()
@@ -256,28 +256,28 @@ def updatecustomer():
     dateval = StringVar()
     timeval = StringVar()
 
-    identry = Entry(updateroot, font=('roman', 15, 'bold'),
+    identry = Entry(updateroot, font=('times', 15, 'bold'),
                     bd=5, textvariable=idval)
     identry.place(x=250, y=10)
 
-    nameentry = Entry(updateroot, font=('roman', 15, 'bold'),
+    nameentry = Entry(updateroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=nameval)
     nameentry.place(x=250, y=70)
 
     mobileentry = Entry(updateroot, font=(
-        'roman', 15, 'bold'), bd=5, textvariable=mobileval)
+        'times', 15, 'bold'), bd=5, textvariable=mobileval)
     mobileentry.place(x=250, y=130)
 
-    dateentry = Entry(updateroot, font=('roman', 15, 'bold'),
+    dateentry = Entry(updateroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=dateval)
-    dateentry.place(x=250, y=430)
+    dateentry.place(x=250, y=190)
 
-    timeentry = Entry(updateroot, font=('roman', 15, 'bold'),
+    timeentry = Entry(updateroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=dateval)
-    timeentry.place(x=250, y=490)
+    timeentry.place(x=250, y=250)
     # ------------------------- add button
-    submitbtn = Button(updateroot, text='Submit', font=('roman', 15, 'bold'), width=20, bd=5, activebackground='blue', activeforeground='white',
-                       bg='red', command=update)
+    submitbtn = Button(updateroot, text='Submit', font=('times', 15, 'bold'), width=20, bd=5, activebackground='#D1F2EB',
+                       bg='#F5EEF8', command=update)
     submitbtn.place(x=150, y=540)
     cc = customertable.focus()
     content = customertable.item(cc)
@@ -328,7 +328,10 @@ def exitcustomer():
         root.destroy()
 
 
-# Connecttion of Database
+
+
+
+# Connecttion of Database---------------------------------------------------------------------------------------------------------------------------------
 def Connectdb():
     def submitdb():
         global con, mycursor
@@ -366,19 +369,19 @@ def Connectdb():
     dbroot = Toplevel()
     dbroot.grab_set()
     dbroot.geometry('470x250+800+230')
-    dbroot.iconbitmap('mana.ico')
+    dbroot.iconbitmap('CustomerPython\mana.ico')
     dbroot.resizable(False, False)
-    dbroot.config(bg='blue')
+    dbroot.config(bg='#FCF3CF')
     # -------------------------------Connectdb Labels
-    hostlabel = Label(dbroot, text="Enter Host : ", bg='gold2', font=(
+    hostlabel = Label(dbroot, text="Enter Host : ", bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=13, anchor='w')
     hostlabel.place(x=10, y=10)
 
-    userlabel = Label(dbroot, text="Enter User : ", bg='gold2', font=(
+    userlabel = Label(dbroot, text="Enter User : ", bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=13, anchor='w')
     userlabel.place(x=10, y=70)
 
-    passwordlabel = Label(dbroot, text="Enter Password : ", bg='gold2', font=(
+    passwordlabel = Label(dbroot, text="Enter Password : ", bg='#F5EEF8', font=(
         'times', 20, 'bold'), relief=GROOVE, borderwidth=3, width=13, anchor='w')
     passwordlabel.place(x=10, y=130)
 
@@ -387,25 +390,25 @@ def Connectdb():
     userval = StringVar()
     passwordval = StringVar()
 
-    hostentry = Entry(dbroot, font=('roman', 15, 'bold'),
+    hostentry = Entry(dbroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=hostval)
     hostentry.place(x=250, y=10)
 
-    userentry = Entry(dbroot, font=('roman', 15, 'bold'),
+    userentry = Entry(dbroot, font=('times', 15, 'bold'),
                       bd=5, textvariable=userval)
     userentry.place(x=250, y=70)
 
-    passwordentry = Entry(dbroot, font=('roman', 15, 'bold'),
+    passwordentry = Entry(dbroot, font=('times', 15, 'bold'),
                           bd=5, textvariable=passwordval)
     passwordentry.place(x=250, y=130)
 
     # -------------------------------- Connectdb button
-    submitbutton = Button(dbroot, text='Submit', font=('roman', 15, 'bold'), bg='red', bd=5, width=20, activebackground='blue',
-                          activeforeground='white', command=submitdb)
+    submitbutton = Button(dbroot, text='Submit', font=('times', 15, 'bold'), bg='#F5EEF8', bd=5, width=20, activebackground='#D1F2EB',
+                           command=submitdb)
     submitbutton.place(x=150, y=190)
 
     dbroot.mainloop()
-###########################################
+############################################---------------------------------------------------------------------------
 
 
 def tick():
@@ -414,81 +417,55 @@ def tick():
     clock.config(text='Date :'+date_string+"\n"+"Time : "+time_string)
     clock.after(200, tick)
 
-
-# INTRO SLIDER
-colors = ['red', 'green', 'blue', 'yellow', 'pink', 'red2', 'gold2']
-
-
-def IntroLabelColorTick():
-    fg = random.choice(colors)
-    SliderLabel.config(fg=fg)
-    SliderLabel.after(2, IntroLabelColorTick)
-
-
-def IntroLabelTick():
-    global count, text
-    if (count >= len(ss)):
-        count = 0
-        text = ''
-        SliderLabel.config(text=text)
-    else:
-        text = text+ss[count]
-        SliderLabel.config(text=text)
-        count += 1
-    SliderLabel.after(200, IntroLabelTick)
-
-
 ##########################################################################################################
 root = Tk()
 root.title('Customer Management System')
-root.config(bg='gold2')
-root.geometry('1174x700+200+50')
-root.iconbitmap('mana.ico')
+root.config(bg='#FCF3CF')
+root.geometry('1430x700+200+50')
+root.iconbitmap('CustomerPython\mana.ico')
 root.resizable(False, False)
 # Frames
 # ---------------------------------------------------------------------------- dataentry frame
 
-DataEntryFrame = Frame(root, bg='gold2', relief=GROOVE, borderwidth=5)
+DataEntryFrame = Frame(root, bg='white', relief=GROOVE, borderwidth=5)
 DataEntryFrame.place(x=10, y=80, width=500, height=600)
-frontlabel = Label(DataEntryFrame, text='--------------Welcome--------------',
-                   width=30, font=('arial', 22, 'italic bold'), bg='gold2')
-frontlabel.pack(side=TOP, expand=True)
-addbtn = Button(DataEntryFrame, text='1. Add Customer', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                activeforeground='white', command=addcustomer)
+
+addbtn = Button(DataEntryFrame, text='Add Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                   command=addcustomer)
 addbtn.pack(side=TOP, expand=True)
 
-searchbtn = Button(DataEntryFrame, text='2. Search Customer', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                   activeforeground='white', command=searchcustomer)
+searchbtn = Button(DataEntryFrame, text='Search Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                   command=searchcustomer)
 searchbtn.pack(side=TOP, expand=True)
 
-deletebtn = Button(DataEntryFrame, text='3. Delete Customer', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                   activeforeground='white', command=deletecustomer)
+deletebtn = Button(DataEntryFrame, text='Delete Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                   command=deletecustomer)
 deletebtn.pack(side=TOP, expand=True)
 
-updatebtn = Button(DataEntryFrame, text='4. Update Customer', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                   activeforeground='white', command=updatecustomer)
+updatebtn = Button(DataEntryFrame, text='Update Customer', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                   command=updatecustomer)
 updatebtn.pack(side=TOP, expand=True)
 
-showallbtn = Button(DataEntryFrame, text='5. Show All', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                    activeforeground='white', command=showcustomer)
+showallbtn = Button(DataEntryFrame, text='Show All', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                    command=showcustomer)
 showallbtn.pack(side=TOP, expand=True)
 
-exportbtn = Button(DataEntryFrame, text='6. Export data', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                   activeforeground='white', command=exportcustomer)
+exportbtn = Button(DataEntryFrame, text='Export data', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                   command=exportcustomer)
 exportbtn.pack(side=TOP, expand=True)
 
-exitbtn = Button(DataEntryFrame, text='7.  Exit', width=25, font=('chiller', 20, 'bold'), bd=6, bg='skyblue3', activebackground='blue', relief=RIDGE,
-                 activeforeground='white', command=exitcustomer)
+exitbtn = Button(DataEntryFrame, text='Exit', width=25, font=('times', 15, 'bold'), bd=6, bg='#F5EEF8', activebackground='#E8F6F3', relief=RIDGE,
+                 command=exitcustomer)
 exitbtn.pack(side=TOP, expand=True)
 
 # -----------------------------------------------------------Show data frame
-ShowDataFrame = Frame(root, bg='gold2', relief=GROOVE, borderwidth=5)
-ShowDataFrame.place(x=550, y=80, width=620, height=600)
+ShowDataFrame = Frame(root, bg='white', relief=GROOVE, borderwidth=5)
+ShowDataFrame.place(x=550, y=80, width=870, height=600)
 
 ##-------------------------------------------------  Showdataframe
 style = ttk.Style()
 style.configure('Treeview.Heading', font=(
-    'chiller', 20, 'bold'), foreground='blue')
+    'times', 15, 'bold'), foreground='#283747')
 style.configure('Treeview', font=('times', 15, 'bold'),
                 background='cyan', foreground='black')
 scroll_x = Scrollbar(ShowDataFrame, orient=HORIZONTAL)
@@ -514,23 +491,14 @@ customertable.column('Added Date', width=150)
 customertable.column('Added Time', width=150)
 customertable.pack(fill=BOTH, expand=1)
 
-# Slider
-ss = 'Welcome To Customer Management System'
-count = 0
-text = ''
-##################################
-SliderLabel = Label(root, text=ss, font=(
-    'chiller', 30, 'italic bold'), relief=RIDGE, borderwidth=4, width=35, bg='cyan')
-SliderLabel.place(x=260, y=0)
-IntroLabelTick()
-IntroLabelColorTick()
+
 # clock
 clock = Label(root, font=('times', 14, 'bold'),
-              relief=RIDGE, borderwidth=4, bg='lawn green')
-clock.place(x=0, y=0)
+              relief=RIDGE, borderwidth=4, bg='#FADBD8')
+clock.place(x=10, y=0)
 tick()
 # ConnectDatabaseButton
-connectbutton = Button(root, text='Connect To Database', width=23, font=('chiller', 19, 'italic bold'), relief=RIDGE, borderwidth=4, bg='green2',
-                       activebackground='blue', activeforeground='white', command=Connectdb)
-connectbutton.place(x=930, y=0)
+connectbutton = Button(root, text='Connect To Database', width=23, font=('times', 13, 'italic bold'), relief=RIDGE, borderwidth=4, bg='#FADBD8',
+                       activebackground='#A3E4D7', command=Connectdb)
+connectbutton.place(x=1170, y=0)
 root.mainloop()
